@@ -19,9 +19,9 @@ namespace SeleniumRunner
         [Test]
         public void Test_Google_Search()
         {
-            driver.Url = "https://www.google.com";
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
-            Sleep(2000);
+            driver.Url = "https://www.google.com";
 
             var input = driver.FindElement(By.CssSelector("[name='q']"));
 
